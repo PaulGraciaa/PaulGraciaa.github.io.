@@ -1,0 +1,265 @@
+/* Mengatur properti dasar untuk seluruh halaman */
+body:not() {
+  margin: 0; /* Menghilangkan margin bawaan browser */
+  font-family: 'Open Sans', sans-serif; /* Menentukan jenis huruf yang digunakan */
+  color: #fff; /* Warna teks default jadi putih */
+  
+  /* Menambahkan gambar sebagai latar belakang halaman */
+
+  background-size: cover; /* Agar gambar menutupi seluruh area */
+  background-position: center; /* Posisikan gambar di tengah */
+  background-repeat: no-repeat; /* Gambar tidak diulang */
+  background-attachment: fixed; /* Gambar tetap di tempat saat scroll */
+}
+
+
+/* Mengatur tampilan link agar tidak bergaris dan warnanya mengikuti elemen induk */
+a {
+  text-decoration: none; /* Menghilangkan garis bawah */
+  color: inherit; /* Mengikuti warna teks dari induknya */
+}
+
+/* Mengatur tampilan header bagian atas */
+.header {
+  background-color: #006d77; /* Warna latar belakang header */
+  padding: 10px 20px; /* Ruang dalam atas-bawah 10px, kanan-kiri 20px */
+  display: flex; /* Agar konten sejajar secara horizontal */
+  align-items: center; /* Posisikan item di tengah secara vertikal */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus di bawah header */
+  height: 80px; /* Tinggi maksimum header */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Container navigasi dalam header */
+.nav-container {
+  display: flex; /* Tampilkan item secara horizontal */
+  align-items: center; /* Sejajarkan vertikal */
+  justify-content: space-between; /* Jarak antara logo dan menu ke tepi */
+  width: 100%; /* Lebar penuh */
+}
+
+/* Mengatur ukuran logo */
+.logo {
+  height: 240px; /* Tinggi maksimum logo */
+  width: auto; /* Otomatis menyesuaikan lebar sesuai proporsi */
+  margin-left: 20px; /* Jarak kiri dari tepi */
+}
+
+/* Gaya untuk setiap link navigasi */
+.nav a {
+  margin-left: 20px; /* Jarak antar menu */
+  color: white; /* Warna teks putih */
+  font-weight: 500; /* Ketebalan huruf */
+  font-size: 16px; /* Ukuran font */
+}
+
+/* Header Styles */
+header {
+  background-color: #004d40;
+  color: white;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.logo span:first-child {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logo span:last-child {
+  font-size: 0.8rem;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover {
+  color: #b2dfdb;
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+.icon:hover svg {
+  fill: #b2dfdb;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* News Article */
+.news-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .news-container {
+    flex-direction: row;
+  }
+}
+
+.news-image {
+  flex: 1;
+}
+
+.news-content {
+  flex: 2;
+}
+
+.news-content h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #004d40;
+}
+
+.news-content p.subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.news-content p {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Bagian footer */
+.footer {
+  background-color: #12636b; /* Warna latar belakang */
+  padding: 5px 0px; /* Ruang dalam */
+  color: white; /* Warna teks */
+  margin-top: 8px; /* Jarak dari gambar */
+  font-size: 25px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Bayangan di atas footer */
+  
+}
+
+/* Konten utama di dalam footer */
+.footer-content {
+  max-width: 1000px; /* Maksimal lebar konten */
+  margin: auto; /* Tengah halaman */
+  width: 100%; /* Supaya tetap responsif */
+  text-align: center; /* Rata tengah */
+  padding: 0 20px;
+}
+
+/* Bagian kolom-kolom footer yang tulisan about, reservasion dan news*/
+.footer-columns {
+  display: flex;
+  justify-content: space-between; /* Biar jaraknya merata kiri-kanan */
+  flex-wrap: wrap;
+  margin-top: 20px;
+  text-align: left;
+  max-width: 1000px; /* Batasi lebar konten footer */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px; /* Jarak dari tepi kiri-kanan */
+}
+
+/* Setiap kolom di footer */
+.footer-columns div {
+  margin: 10px 10px; /* Jarak antar kolom */
+}
+
+/* Judul masing-masing kolom */
+.footer-columns h4 {
+  margin-bottom: 10px;
+}
+
+/* Link di footer */
+.footer-columns a {
+  display: block; /* Tampilkan sebagai blok, satu per baris */
+  margin: 5px 0;
+  font-size: 14px;
+  color: #e0f7fa; /* Warna link yang lebih terang */
+}
+
+/* Bagian sosial media */
+.socials {
+  margin-top: 20px;
+}
+
+/* Link icon sosial media */
+.socials a {
+  margin: 0 10px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Legal notice kecil di bawah footer */
+.legal {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #b2dfdb;
+}
+
