@@ -1,43 +1,34 @@
-/* Mengatur properti dasar untuk seluruh halaman */
-body:not(.login-page) {
-  margin: 0; /* Menghilangkan margin bawaan browser */
-  font-family: 'Open Sans', sans-serif; /* Menentukan jenis huruf yang digunakan */
-  color: #fff; /* Warna teks default jadi putih */
-  
-  /* Menambahkan gambar sebagai latar belakang halaman */
-  background-image: url(../img/baghotell.jpg); /* Lokasi file gambar background */
-  background-size: cover; /* Agar gambar menutupi seluruh area */
-  background-position: center; /* Posisikan gambar di tengah */
-  background-repeat: no-repeat; /* Gambar tidak diulang */
-  background-attachment: fixed; /* Gambar tetap di tempat saat scroll */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-/* Efek gelap transparan di atas background */
-body:not(.login-page)::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Untuk baground agak Transparan hitam */
-  z-index: -1; /* Supaya ada di belakang konten utama */
-}
-
-/* Mengatur tampilan link agar tidak bergaris dan warnanya mengikuti elemen induk */
-a {
-  text-decoration: none; /* Menghilangkan garis bawah */
-  color: inherit; /* Mengikuti warna teks dari induknya */
-}
-
-/* Mengatur tampilan header bagian atas */
+/* Header Baru */
 .header {
-  background-color: #006d77; /* Warna latar belakang header */
-  padding: 10px 20px; /* Ruang dalam atas-bawah 10px, kanan-kiri 20px */
-  display: flex; /* Agar konten sejajar secara horizontal */
-  align-items: center; /* Posisikan item di tengah secara vertikal */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus di bawah header */
-  height: 80px; /* Tinggi maksimum header */
+  background-color: #006d77;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 80px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  height: 240px;
+  width: auto;
+  margin-left: 20px;
 }
 
 .nav {
@@ -46,223 +37,371 @@ a {
   margin-right: 20px;
 }
 
-/* Container navigasi dalam header */
-.nav-container {
-  display: flex; /* Tampilkan item secara horizontal */
-  align-items: center; /* Sejajarkan vertikal */
-  justify-content: space-between; /* Jarak antara logo dan menu ke tepi */
-  width: 100%; /* Lebar penuh */
-}
-
-/* Mengatur ukuran logo */
-.logo {
-  height: 240px; /* Tinggi maksimum logo */
-  width: auto; /* Otomatis menyesuaikan lebar sesuai proporsi */
-  margin-left: 20px; /* Jarak kiri dari tepi */
-}
-
-/* Gaya untuk setiap link navigasi */
 .nav a {
-  margin-left: 20px; /* Jarak antar menu */
-  color: white; /* Warna teks putih */
-  font-weight: 500; /* Ketebalan huruf */
-  font-size: 16px; /* Ukuran font */
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
 }
 
-/* Overlay yang ada di tengah halaman (tempat tulisan welcome) */
-.hero-overlay {
-  background-color: transparent; /* Dibuat transparan supaya background gambar terlihat */
-  padding: 60px 30px; /* Ruang dalam: atas-bawah 60px, kanan-kiri 30px */
-  text-align: center; /* Teks di tengah */
+/* header nontifikasi dan profile */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #006d77;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .socials a,
+  .user-icons a {
+    color: #333;
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .socials a:hover,
+  .user-icons a:hover {
+    color: #007bff;
+  }
+
+  .user-icons {
+    display: flex;
+    align-items: center;
+  }
+
+/*search now*/
+
+.search-box {
+  width: 1120px;
+  margin: 40px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-/* -------------------------------------------------
-   FORM PEMESANAN
---------------------------------------------------*/
-.form-container {
-  background: rgba(255, 255, 255, 0.95);
-  width: 90%;
-  max-width: 980px;
-  margin: 50px auto;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.form-container h2 {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 26px;
-  color: #006d77;
-}
-
-.booking-form {
+.search-bar {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  gap: 15px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.search-group {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 14px;
+  flex: 1;
+  min-width: 200px;
+}
+
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: white;
+  padding: 5px 8px;
+  margin-top: 5px;
+}
+
+.input-with-icon .icon {
+  margin-right: 6px;
+}
+
+.input-with-icon input,
+.input-with-icon select {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: transparent;
+  flex: 1;
+}
+
+.search-button {
+  padding: 10px 20px;
+  background-color: gold;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+/*kolom 2*/
+
+.room-card-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.room-card {
+  width: 1120px;
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.room-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
+  background-color: #d9d8d8;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid #999;
+  border-radius: 5px 5px 0 0;
+}
+
+/* Konten baris isi (gambar + isi card + tombol) */
+.room-content {
+  display: grid;
+  grid-template-columns: 1.2fr 4fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.9);
+}
+
+/* Gambar */
+.room-column.image img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+/* Main isi card container */
+/* Container keseluruhan */
+.room-card-container {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Header */
+.room-header {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #e0e0e0;
+  padding: 10px;
+  font-weight: bold;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+/* Konten utama */
+.room-content {
+  display: flex;
+  gap: 20px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Gambar */
+.room-column.image img {
+  width: 200px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+/* Card utama (detail + tombol) */
+.room-main-box {
+  background-color: white;
+  border: 1px solid #aaa;
+  padding: 15px;
+  border-radius: 6px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Bagian atas: detail */
+.main-card-content {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1.5fr;
+  align-items: center;
   gap: 20px;
 }
 
-.form-left,
-.form-right {
-  flex: 0 0 48%;
+/* Detail room */
+.room-detail-box {
   display: flex;
   flex-direction: column;
-}
-
-.booking-form label {
-  margin: 10px 0 5px;
-  font-weight: bold;
+  gap: 5px;
   font-size: 14px;
+  position: relative;
+  left: 45px;
 }
 
-.booking-form input,
-.booking-form select {
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-/* Opsi gender berdampingan */
-.gender-options {
+/* Tanggal */
+.room-date {
   display: flex;
-  gap: 25px;
-  margin-top: 4px;
-}
-.gender-options label {
-  font-weight: normal;
-}
-
-/* Tombol */
-.form-buttons {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 30px;
-}
-
-.btn {
-  min-width: 160px;
-  padding: 10px 22px;
+  flex-direction: column;
+  gap: 5px;
   font-size: 14px;
+  position: relative;
+  left: 45px;
+
+}
+
+/* Input jumlah kamar */
+.room-number input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  position: relative;
+  left: 27px;
+}
+
+/* Harga */
+.room-price {
+  text-align: right;
+  font-size: 14px;
+  position: relative;
+  left: -25px;
+}
+
+.room-price .amount {
+  color: goldenrod;
   font-weight: bold;
+}
+
+.per-night {
+  font-size: 12px;
+}
+
+/* Tombol Book Now */
+.room-book-card {
+  margin-top: 15px;
+  padding-top: 10px;
+  text-align: right;
+  border-top: 1px solid #999; /* Garis pembatas atas */
+}
+
+
+.book-btn {
+  background-color: gold;
   border: none;
-  border-radius: 6px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
   cursor: pointer;
-  transition: opacity 0.25s;
-  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  opacity: 0.9;
+.book-btn:hover {
+  background-color: #e6b800;
 }
 
-.hitung  { background-color: #3abe3a; }
-.booking { background-color: #26c942; }
-.cancel  { background-color: #e04747; }
-
-/* -------------------------------------------------
-   FOOTER
---------------------------------------------------*/
+/* Footer */
 .footer {
   background-color: #12636b;
-  padding: 5px 0px;
+  padding: 30px 0;
   color: white;
-  margin-top: 8px;
-  font-size: 25px;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
 }
 
 .footer-content {
   max-width: 1000px;
-  margin: auto;
-  width: 100%;
-  text-align: center;
+  margin: 0 auto;
   padding: 0 20px;
+}
+
+.footer h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .footer-columns {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 20px;
   text-align: left;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 40px;
+  padding: 0 20px;
+  margin-bottom: 30px;
 }
 
 .footer-columns div {
-  margin: 10px 10px;
+  margin: 10px;
+  flex: 1 1 200px;
 }
 
 .footer-columns h4 {
   margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .footer-columns a {
   display: block;
-  margin: 5px 0;
+  margin: 6px 0;
   font-size: 14px;
-  color: #ffffff;
+  color: #e0f7fa;
   text-decoration: none;
 }
 
 .footer-columns a:hover {
   text-decoration: underline;
 }
-.footer hr {
-  display: none;
-  border: none;
-  height: 0;
-}
 
-/* Ikon sosial media */
-.socials {
-  margin-top: 20px;
-  border-top: none
-}
+/* posisi sosial media  */
+  .socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
 
-.socials a {
-  margin: 0 10px;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-}
+  .socials a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
 
-/* Bagian legal bawah footer */
+  .socials a:hover {
+    color: #007bff;
+  }
+
+
+/* Legal Links */
 .legal {
-  margin-top: 20px;
-  font-size: 12px;
-  color: #ffffff;
-  text-align: center;
-  
+  font-size: 13px;
+  color: #e0f7fa;
+  text-align: left;
 }
 
 .legal a {
-  color: #ffffff;
+  color: #e0f7fa;
   text-decoration: none;
-  margin: 0 5px;
 }
 
 .legal a:hover {
   text-decoration: underline;
-}
-
-/* Supaya teks di dalam form kelihatan */
-.form-container,
-.form-container label,
-.form-container input,
-.form-container select,
-.form-container option {
-  color: #333; /* Warna teks jadi abu tua */
-}
-
-.form-container input::placeholder {
-  color: #666; /* Warna placeholder sedikit lebih terang */
 }
