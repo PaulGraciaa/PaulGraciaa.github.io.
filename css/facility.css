@@ -5,7 +5,7 @@ body:not(.login-page) {
   color: #fff; /* Warna teks default jadi putih */
   
   /* Menambahkan gambar sebagai latar belakang halaman */
-  background-image: url(../img/baghotell.jpg); /* Lokasi file gambar background */
+  background-image: url(../img/login.jpg); /* Lokasi file gambar background */
   background-size: cover; /* Agar gambar menutupi seluruh area */
   background-position: center; /* Posisikan gambar di tengah */
   background-repeat: no-repeat; /* Gambar tidak diulang */
