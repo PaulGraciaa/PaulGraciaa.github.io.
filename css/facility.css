@@ -5,7 +5,7 @@ body:not(.login-page) {
   color: #fff; /* Warna teks default jadi putih */
   
   /* Menambahkan gambar sebagai latar belakang halaman */
-  background-image: url(../img/login.jpg); /* Lokasi file gambar background */
+  background-image: url(../img/baghotell.jpg); /* Lokasi file gambar background */
   background-size: cover; /* Agar gambar menutupi seluruh area */
   background-position: center; /* Posisikan gambar di tengah */
   background-repeat: no-repeat; /* Gambar tidak diulang */
@@ -20,7 +20,9 @@ body:not(.login-page)::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Untuk baground agak Transparan hitam */
+  background-color: rgba(0, 0, 0, 0.4); /* transparan hitam */
+ /* transparan putih */
+ /* Untuk baground agak Transparan hitam */
   z-index: -1; /* Supaya ada di belakang konten utama */
 }
 
@@ -118,27 +120,34 @@ a {
 }
 
 .facility {
-  width: 270px;
-  text-align: center;
-  margin: 10px;
-}
-
-.facility img {
+  display: flex;
+  align-items: center;
   width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 12px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+.facility img {
+  width: 160px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 16px;
+}
+
 .facility-label {
-  margin-top: 10px;
   font-size: 20px;
   font-weight: 600;
   color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* biar tetap terbaca di background terang */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
   font-family: 'Open Sans', sans-serif;
+  flex: 1;
 }
+
 
 /* Bagian footer */
 .footer {
@@ -147,8 +156,6 @@ a {
   color: white;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
   font-size: 16px;
-  margin-top: 50px; /* jarak antara konten atas dan footer */
-  padding-top: 20px; /* ruang di dalam footer bagian atas */
 }
 
 .footer-content {
@@ -159,25 +166,23 @@ a {
 
 .footer h2 {
   text-align: center;
-  margin: 0 0 30px 0; /* ➕ beri jarak bawah */
+  margin-bottom: 20px;
 }
-
 
 .footer-columns {
   display: flex;
-  justify-content: space-between;
+  justify-content:center;
   flex-wrap: wrap;
   text-align: left;
-  gap: 30px; /* ➕ Tambahkan jarak antar kolom */
-  padding: 0 40px; /* ➕ Tambahkan padding kiri dan kanan */
+  /* padding: 0 20px; Dihapus karena footer-content sudah punya padding */
+  gap: 60px;
   margin-bottom: 30px;
 }
 
 .footer-columns div {
-  flex: 1 1 220px; /* Minimum 220px supaya tidak terlalu sempit */
-  margin: 10px 20px; /* ➕ Tambahkan jarak antar kolom */
+  margin: 10px; /* Ini akan menambah jarak antar kolom */
+  flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
 }
-
 
 .footer-columns h4 {
   margin-bottom: 10px;
