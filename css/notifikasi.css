@@ -123,10 +123,17 @@ a {
 
 /* Footer (bisa salin dari index.css jika sama) */
 .footer {
-  background-color: #1f5c63;
+  background-color: #12636b;
+  padding: 30px 0;
   color: white;
-  padding: 40px 20px;
-  margin-top: 50px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer h2 {
@@ -136,29 +143,71 @@ a {
 
 .footer-columns {
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  /* padding: 0 20px; Dihapus karena footer-content sudah punya padding */
+  margin-bottom: 30px;
 }
 
-.footer-columns div a {
-  display: block;
-  color: white;
-  margin-bottom: 6px;
-  text-decoration: none;
+.footer-columns div {
+  margin: 10px; /* Ini akan menambah jarak antar kolom */
+  flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
 }
 
-.socials {
-  text-align: center;
+.footer-columns h4 {
   margin-bottom: 10px;
-}
-
-.socials a {
-  color: white;
-  margin: 0 10px;
   font-size: 18px;
 }
 
+.footer-columns a {
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  color: #e0f7fa;
+  text-decoration: none;
+}
+
+.footer-columns a:hover {
+  text-decoration: underline;
+}
+
+/* Ini menargetkan .socials secara umum, termasuk yang mungkin ada di header */
+.socials {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px; /* Mungkin tidak diinginkan untuk socials di header */
+}
+
+/* Pastikan ini spesifik untuk socials di footer jika ada yang di header */
+.footer .socials a { /* Lebih spesifik untuk footer */
+  color: #ffffff;
+  font-size: 24px; /* Ukuran berbeda dari socials di header */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-left: 0; /* Override margin-left dari .socials a general */
+}
+
+.footer .socials a:hover {
+  color: #007bff;
+}
+
 .legal {
-  text-align: center;
-  font-size: 12px;
+  font-size: 13px;
+  color: #e0f7fa;
+  text-align: left; /* Ini mungkin perlu center jika ingin di tengah footer */
+}
+
+.legal a {
+  color: #e0f7fa;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+/* Rekomendasi Tambahan */
+* { /* Untuk perhitungan box model yang lebih intuitif */
+  box-sizing: border-box;
 }
