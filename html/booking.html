@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SEASIDE Hotel Booking</title>
+  <link rel="stylesheet" href="../css/booking.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="nav-container">
+      <img src="../img/logo.png" class="logo" alt="Logo Hotel" />
+      <div class="nav">
+        <a href="index.html">Home</a>
+        <a href="rooms.html">Room & Suites</a>
+        <a href="facility.html">Facility</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="booking.html">Booking</a>
+        <!-- Ikon Notifikasi & Profil -->
+        <a href="login.html"><i class="fas fa-user-circle"></i></a>
+        <a href="notifikasi.html"><i class="fas fa-bell"></i></a>
+      </div>
+    </div>
+  </div>
+
+   <!-- Search box -->
+ <section class="search-box">
+  <form class="search-bar">
+    <div class="search-group">
+      <label for="roomType">Room type</label>
+      <div class="input-with-icon">
+        <i class="fas fa-bed icon"></i>
+        <select id="roomType" name="roomType">
+          <option>All Room Type</option>
+          <option value="standard">Standard</option>
+          <option value="deluxe">Deluxe</option>
+          <option value="suite">Suite</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="search-group">
+      <label for="roomNumber">Number of Room</label>
+      <div class="input-with-icon">
+
+        <input type="number" id="roomNumber" name="roomNumber" placeholder="000" min="1" />
+      </div>
+    </div>
+
+    <div class="search-group">
+      <label for="checkin">Check-In</label>
+      <div class="input-with-icon">
+        <i class="fas fa-calendar icon"></i>
+        <input type="date" id="checkin" name="checkin" />
+      </div>
+    </div>
+
+    <div class="search-group">
+      <label for="checkout">Check-Out</label>
+      <div class="input-with-icon">
+        <i class="fas fa-calendar icon"></i>
+        <input type="date" id="checkout" name="checkout" />
+      </div>
+    </div>
+
+    <button class="search-button" type="submit">Search Now</button>
+  </form>
+</section>
+
+<!-- KOLOM 2 -->
+ <section class="room-card-container">
+  <!-- Header -->
+  <div class="room-card">
+    <div class="room-header">
+      <span><strong>Deluxe Room</strong></span>
+      <span><strong>Advantage</strong></span>
+      <span><strong>Capacity</strong></span>
+      <span><strong>No. of Room</strong></span>
+      <span><strong>Price</strong></span>
+    </div>
+
+    <!-- Konten utama (gambar + detail) -->
+    <div class="room-content">
+      <!-- Gambar -->
+      <div class="room-column image">
+        <img src="../img/deluxe.jpg" alt="room" />
+      </div>
+
+      <!-- Konten detail dan tombol dalam satu container -->
+      <div class="room-main-box">
+        <!-- Bagian konten atas -->
+        <div class="main-card-content">
+          <!-- Room Detail -->
+          <div class="room-detail-box">
+            <strong>Room Detail</strong>
+            <div><i class="fas fa-wifi"></i> Free wifi</div>
+            <div><i class="fas fa-bed"></i> 2 King Bed</div>
+          </div>
+
+          <!-- Tanggal -->
+          <div class="room-date">
+            <div><i class="fas fa-user"></i> 00/00/0000</div>
+            <div><i class="fas fa-user"></i> 00/00/0000</div>
+          </div>
+
+          <!-- Input jumlah room -->
+          <div class="room-number">
+            <input type="text" placeholder="000">
+          </div>
+
+          <!-- Harga -->
+         <div class="room-price" data-price="1500000">
+           <div class="amount">Rp. 0.000.000</div>
+           <div class="per-night">/room/night</div>
+        </div>
+        </div>
+
+        <!-- Tombol Book Now (di bawah konten) -->
+        <div class="room-book-card">
+         <button class="book-btn">Book Now</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KOLOM 2 -->
+ <section class="room-card-container">
+  <!-- Header -->
+  <div class="room-card">
+    <div class="room-header">
+      <span><strong>Deluxe Room</strong></span>
+      <span><strong>Advantage</strong></span>
+      <span><strong>Capacity</strong></span>
+      <span><strong>No. of Room</strong></span>
+      <span><strong>Price</strong></span>
+    </div>
+
+    <!-- Konten utama (gambar + detail) -->
+    <div class="room-content">
+      <!-- Gambar -->
+      <div class="room-column image">
+        <img src="../img/deluxe.jpg" alt="room" />
+      </div>
+
+      <!-- Konten detail dan tombol dalam satu container -->
+      <div class="room-main-box">
+        <!-- Bagian konten atas -->
+        <div class="main-card-content">
+          <!-- Room Detail -->
+          <div class="room-detail-box">
+            <strong>Room Detail</strong>
+            <div><i class="fas fa-wifi"></i> Free wifi</div>
+            <div><i class="fas fa-bed"></i> 2 King Bed</div>
+          </div>
+
+          <!-- Tanggal -->
+          <div class="room-date">
+            <div><i class="fas fa-user"></i> 00/00/0000</div>
+            <div><i class="fas fa-user"></i> 00/00/0000</div>
+          </div>
+
+          <!-- Input jumlah room -->
+          <div class="room-number">
+            <input type="text" placeholder="000">
+          </div>
+
+          <!-- Harga -->
+         <div class="room-price" data-price="1500000">
+           <div class="amount">Rp. 0.000.000</div>
+           <div class="per-night">/room/night</div>
+        </div>
+        </div>
+
+        <!-- Tombol Book Now (di bawah konten) -->
+        <div class="room-book-card">
+         <button class="book-btn">Book Now</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <h2>SEASIDE</h2>
+      <div class="footer-columns">
+        <div>
+          <h4>About</h4>
+          <a href="#">About Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div>
+          <h4>Reservations</h4>
+          <a href="#">Request an invoice</a>
+          <a href="#">Find a reservation</a>
+          <a href="#">Email Preferences</a>
+        </div>
+        <div>
+          <h4>News</h4>
+          <a href="#">Press Room</a>
+          <a href="#">New Openings</a>
+          <a href="#">Magazine</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/ltfiia_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+      <hr class="footer-separator" />
+      <div class="legal">
+        <a href="#">Legal Notice</a> `
+        <a href="#">Privacy Policy</a> `
+        <a href="#">Cookie Preferences</a> `
+        <a href="#">Cookie Accessibility Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</body>
+</html>
+
+</body>
+</html>
+
+<script>
+  document.querySelector('.search-bar').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const roomType = document.getElementById('roomType').value;
+    const roomNumber = document.getElementById('roomNumber').value;
+    const checkIn = document.getElementById('checkin').value;
+    const checkOut = document.getElementById('checkout').value;
+
+    // Ubah semua card (misalnya ada lebih dari satu)
+    document.querySelectorAll('.room-card').forEach(function(card) {
+      // Room type diubah hanya jika cocok
+      if (roomType !== 'All Room Type') {
+        const title = card.querySelector('.room-header span:first-child');
+        title.textContent = roomType.charAt(0).toUpperCase() + roomType.slice(1) + ' Room';
+      }
+
+      // Check-in dan Check-out
+      const dates = card.querySelectorAll('.room-date div');
+      if (dates.length >= 2) {
+        dates[0].innerHTML = `<i class="fas fa-user"></i> ${checkIn}`;
+        dates[1].innerHTML = `<i class="fas fa-user"></i> ${checkOut}`;
+      }
+
+      // Number of rooms
+      const roomInput = card.querySelector('.room-number input');
+      if (roomInput) {
+        roomInput.value = roomNumber;
+      }
+    });
+  });
+</script>
+
+<script>
+  // Fungsi menghitung jumlah hari antara dua tanggal
+  function calculateNights(checkin, checkout) {
+    const inDate = new Date(checkin);
+    const outDate = new Date(checkout);
+    const diffTime = outDate - inDate;
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays > 0 ? diffDays : 0;
+  }
+
+  // Fungsi update harga total
+  function updatePrices() {
+    const checkin = document.getElementById("checkin").value;
+    const checkout = document.getElementById("checkout").value;
+    const nights = calculateNights(checkin, checkout);
+
+    document.querySelectorAll(".room-card").forEach(card => {
+      const priceContainer = card.querySelector(".room-price");
+      const pricePerNight = parseInt(priceContainer.dataset.price);
+      const amountElement = priceContainer.querySelector(".amount");
+
+      const totalPrice = pricePerNight * nights;
+
+      if (!isNaN(totalPrice) && nights > 0) {
+        amountElement.textContent = `Rp. ${totalPrice.toLocaleString('id-ID')}`;
+      } else {
+        amountElement.textContent = "Rp. 0";
+      }
+    });
+  }
+
+  // Event listeners
+  document.getElementById("checkin").addEventListener("change", updatePrices);
+  document.getElementById("checkout").addEventListener("change", updatePrices);
+</script>
