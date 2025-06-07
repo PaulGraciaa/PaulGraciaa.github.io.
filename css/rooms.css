@@ -153,90 +153,71 @@ body::before {
   color: #e0f7fa;
 }
 
-/* Bagian footer */
+/* FOOTER */
 .footer {
   background-color: #12636b;
-  padding: 30px 0;
+  padding: 5px 0px;
   color: white;
+  font-size: 25px;
+  margin-top: 40px;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-  font-size: 16px;
-  margin-top: 50px; /* jarak antara konten atas dan footer */
-  padding-top: 20px; /* ruang di dalam footer bagian atas */
 }
 
 .footer-content {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
+  width: 100%;
+  text-align: center;
   padding: 0 20px;
 }
-
-.footer h2 {
-  text-align: center;
-  margin: 0 0 30px 0; /* ➕ beri jarak bawah */
-}
-
 
 .footer-columns {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 20px;
   text-align: left;
-  gap: 30px; /* ➕ Tambahkan jarak antar kolom */
-  padding: 0 40px; /* ➕ Tambahkan padding kiri dan kanan */
-  margin-bottom: 30px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 40px;
 }
 
 .footer-columns div {
-  flex: 1 1 220px; /* Minimum 220px supaya tidak terlalu sempit */
-  margin: 10px 20px; /* ➕ Tambahkan jarak antar kolom */
+  margin: 10px 10px;
 }
-
 
 .footer-columns h4 {
   margin-bottom: 10px;
-  font-size: 18px;
 }
 
 .footer-columns a {
   display: block;
-  margin: 6px 0;
+  margin: 5px 0;
   font-size: 14px;
   color: #e0f7fa;
   text-decoration: none;
 }
 
-.footer-columns a:hover {
-  text-decoration: underline;
-}
-
-/* Ini menargetkan .socials secara umum, termasuk yang mungkin ada di header */
 .socials {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px; /* Mungkin tidak diinginkan untuk socials di header */
+  margin-top: 20px;
 }
 
-/* Pastikan ini spesifik untuk socials di footer jika ada yang di header */
-.footer .socials a { /* Lebih spesifik untuk footer */
-  color: #ffffff;
-  font-size: 24px; /* Ukuran berbeda dari socials di header */
-  text-decoration: none;
-  transition: color 0.3s ease;
-  margin-left: 0; /* Override margin-left dari .socials a general */
-}
-
-.footer .socials a:hover {
-  color: #007bff;
+.socials a {
+  margin: 0 10px;
+  color: white;
+  font-size: 20px;
 }
 
 .legal {
-  font-size: 13px;
-  color: #e0f7fa;
-  text-align: left; /* Ini mungkin perlu center jika ingin di tengah footer */
+  margin-top: 20px;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
 }
 
 .legal a {
-  color: #e0f7fa;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -244,7 +225,8 @@ body::before {
   text-decoration: underline;
 }
 
-/* Rekomendasi Tambahan */
-* { /* Untuk perhitungan box model yang lebih intuitif */
-  box-sizing: border-box;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
