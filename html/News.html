@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seaside Hotel - News</title>
+  <title>Seaside Resort</title>
   <link rel="stylesheet" href="../css/News.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
 </head>
 <body> <!--Isi Utama Dalam halaman web -->
 
   <!-- Header -->
-     <nav>
+      <nav>
               <div class="header">
                 <div class="nav-container">
                 <img src="../img/logo.png" class="logo" alt="Logo Hotel" />
@@ -28,33 +33,44 @@
           </div>
 
         </nav>
-    <div class="icons">
-      <div class="icon">
-        <!-- User Icon -->
-        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-      </div>
-      <div class="icon">
-        <!-- Notification Bell -->
-        <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
-      </div>
-    </div>
-  </header>
 
- 
+    <!-- Banner -->
+    <section class="banner">
+        <h1 class="banner-title">News</h1>
+    </section>
 
-  <!-- News Content -->
-  <section class="news-container">
-    <div class="news-image">
-      <img src="../img/baghotell.jpg" alt="Hotel Image" />
-    </div>
-    <div class="news-content">
-      <h2>Seaside Hotel Resmi Dibuka untuk Umum</h2>
-      <p class="subtitle">[Seaside Bay, 16 April 2025]</p>
-      <p>
-        Seaside Hotel & Resort kini resmi dibuka! Terletak di garis pantai indah Seaside Bay, resort ini menyuguhkan pemandangan laut lepas dan sunset yang menakjubkan. Dengan fasilitas kelas dunia dan layanan penuh keramahan, Seaside siap menjadi destinasi favorit para pencinta ketenangan dan keindahan alam.
-      </p>
-    </div>
-  </section>
+    <!-- News Content -->
+    <main class="content-wrapper">
+        <div class="news-container">
+            <!-- Kotak Berita Pertama -->
+            <div class="news-section">
+                <div class="news-article">
+                    <div class="article-image">
+                        <img src="../img/background.jpg" alt="Hotel Pool">
+                    </div>
+                    <div class="article-text">
+                        <h2 class="article-title">Seaside Hotel Resmi Dibuka untuk Umum</h2>
+                        <p class="article-date">[Seaside Bay, 16 April 2025]</p>
+                        <p>
+                            Seaside Hotel & Resort kini resmi dibuka! Terletak di garis pantai indah Seaside Bay, resort ini menyuguhkan pemandangan laut lepas dan sunset yang menakjubkan. 
+                            Dengan fasilitas kelas dunia dan layanan penuh keramahan, Seaside siap menjadi destinasi favorit para pencinta ketenangan dan keindahan alam.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kotak Berita Kedua -->
+            <div class="news-section">
+                <div class="news-article">
+                    <div class="article-image">
+                        <img src="" alt="">
+                    </div>
+                    <div class="article-text">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
   <!-- Footer pada bagian bawah-->
    <footer class="footer">
@@ -98,9 +114,5 @@
             </div>
         </div>
     </footer>
-
-
 </body>
 </html>
-
-
