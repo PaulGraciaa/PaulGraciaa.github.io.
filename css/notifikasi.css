@@ -5,7 +5,7 @@ body:not(.login-page) {
   color: #fff; /* Warna teks default jadi putih */
   
   /* Menambahkan gambar sebagai latar belakang halaman */
-  background-image: url(../img/login.jpg); /* Lokasi file gambar background */
+  background-image: url(../img/baghotell.jpg); /* Lokasi file gambar background */
   background-size: cover; /* Agar gambar menutupi seluruh area */
   background-position: center; /* Posisikan gambar di tengah */
   background-repeat: no-repeat; /* Gambar tidak diulang */
@@ -63,12 +63,19 @@ a {
 
 /* Gaya untuk setiap link navigasi */
 .nav a {
-    margin-left: 20px; /* Jarak antar menu */
-    padding: 10px; /* Tambahkan padding untuk ruang dalam */
-    background-color: #006d77; /* Warna latar belakang untuk kolom */
-    color: white; /* Warna teks putih */
-    border-radius: 4px; /* Sudut melengkung */
+  margin-left: 20px; /* Jarak antar menu */
+  color: white; /* Warna teks putih */
+  font-weight: 500; /* Ketebalan huruf */
+  font-size: 16px; /* Ukuran font */
 }
+
+/* Overlay yang ada di tengah halaman (tempat tulisan welcome) */
+.hero-overlay {
+  background-color: transparent; /* Dibuat transparan supaya background gambar terlihat */
+  padding: 60px 30px; /* Ruang dalam: atas-bawah 60px, kanan-kiri 30px */
+  text-align: center; /* Teks di tengah */
+}
+
 .btn {
   padding: 10px 20px;
   border: none;
@@ -102,13 +109,15 @@ a {
 .notif-list {
     width: 100%; /* Memenuhi lebar layar */
     background-color: #fff;
-    padding: 15px; /* Padding dalam */
+    padding: 20px; 
+    min-height: 300px;
     margin-bottom: 20px; /* Tambahkan margin bawah */
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: relative; /* Memungkinkan penempatan lebih baik */
     left: 0; /* Mengatur posisi kolom */
     right: 0; /* Mengatur posisi kolom */
+    height: calc(100vh - 80px); /* Mengatur tinggi agar kurang dari tinggi viewport */
 }
 
 /* Menghapus margin agar kolom putih memenuhi lebar penuh */
