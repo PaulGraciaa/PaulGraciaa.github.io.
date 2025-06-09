@@ -78,14 +78,16 @@ a {
 
 /* Judul kecil di hero section */
 .hero-overlay h3 {
-  font-size: 24px; /* Ukuran huruf */
+  font-size: 26px; /* Ukuran huruf */
   margin-bottom: 10px; /* Jarak bawah antar elemen */
+  font-weight: normal;
 }
 
 /* Judul besar di hero section */
 .hero-overlay h1 {
   font-size: 40px; /* Ukuran huruf besar */
   font-weight: bold; /* Huruf tebal */
+  font-family: 'PoetsenOne', sans-serif;
 }
 
 /* Gaya untuk tombol utama */
@@ -121,6 +123,12 @@ a {
   width: 270px;
   text-align: center;
   margin: 10px;
+  font-size: 18px;
+}
+
+.facility-overlay {
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .facility img {
@@ -133,7 +141,7 @@ a {
 
 .facility-label {
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: white;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.6); /* biar tetap terbaca di background terang */

@@ -1,7 +1,7 @@
 /* Global reset dan background */
 body {
   margin: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; /* Menentukan jenis huruf yang digunakan */
   color: #fff;
   background-image: url(../img/baghotell.jpg);
   background-size: cover;
