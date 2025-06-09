@@ -1,187 +1,157 @@
-/* Mengatur properti dasar untuk seluruh halaman */
-body:not(.login-page) {
-  margin: 0; /* Menghilangkan margin bawaan browser */
-  font-family: 'Open Sans', sans-serif; /* Menentukan jenis huruf yang digunakan */
-  color: #fff; /* Warna teks default jadi putih */
-  
-  /* Menambahkan gambar sebagai latar belakang halaman */
-  background-image: url(../img/baghotell.jpg); /* Lokasi file gambar background */
-  background-size: cover; /* Agar gambar menutupi seluruh area */
-  background-position: center; /* Posisikan gambar di tengah */
-  background-repeat: no-repeat; /* Gambar tidak diulang */
-  background-attachment: fixed; /* Gambar tetap di tempat saat scroll */
+/* Gaya Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Efek gelap transparan di atas background */
-body:not(.login-page)::before {
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-image: url(../img/baghotell.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+body::before {
   content: "";
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.4); /* transparan hitam */
- /* transparan putih */
- /* Untuk baground agak Transparan hitam */
-  z-index: -1; /* Supaya ada di belakang konten utama */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
-/* Mengatur tampilan link agar tidak bergaris dan warnanya mengikuti elemen induk */
-a {
-  text-decoration: none; /* Menghilangkan garis bawah */
-  color: inherit; /* Mengikuti warna teks dari induknya */
-}
-
-/* Mengatur tampilan header bagian atas */
+/* Header */
 .header {
-  background-color: #006d77; /* Warna latar belakang header */
-  padding: 10px 20px; /* Ruang dalam atas-bawah 10px, kanan-kiri 20px */
-  display: flex; /* Agar konten sejajar secara horizontal */
-  align-items: center; /* Posisikan item di tengah secara vertikal */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus di bawah header */
-  height: 80px; /* Tinggi maksimum header */
-}
-
-.nav {
+  background-color: #006d77;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
-  margin-right: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Container navigasi dalam header */
 .nav-container {
-  display: flex; /* Tampilkan item secara horizontal */
-  align-items: center; /* Sejajarkan vertikal */
-  justify-content: space-between; /* Jarak antara logo dan menu ke tepi */
-  width: 100%; /* Lebar penuh */
-}
-
-/* Mengatur ukuran logo */
-.logo {
-  height: 240px; /* Tinggi maksimum logo */
-  width: auto; /* Otomatis menyesuaikan lebar sesuai proporsi */
-  margin-left: 20px; /* Jarak kiri dari tepi */
-}
-
-/* Gaya untuk setiap link navigasi */
-.nav a {
-  margin-left: 20px; /* Jarak antar menu */
-  color: white; /* Warna teks putih */
-  font-weight: 500; /* Ketebalan huruf */
-  font-size: 16px; /* Ukuran font */
-}
-
-/* Overlay yang ada di tengah halaman (tempat tulisan welcome) */
-.hero-overlay {
-  background-color: transparent; /* Dibuat transparan supaya background gambar terlihat */
-  padding: 60px 30px; /* Ruang dalam: atas-bawah 60px, kanan-kiri 30px */
-  text-align: center; /* Teks di tengah */
-}
-
-/* Judul kecil di hero section */
-.hero-overlay h3 {
-  font-size: 24px; /* Ukuran huruf */
-  margin-bottom: 10px; /* Jarak bawah antar elemen */
-}
-
-/* Judul besar di hero section */
-.hero-overlay h1 {
-  font-size: 40px; /* Ukuran huruf besar */
-  font-weight: bold; /* Huruf tebal */
-}
-
-/* Gaya untuk tombol utama */
-.btn {
-  margin: 20px 0; /* Jarak atas dan bawah */
-  background-color: #006d77; /* Warna latar tombol */
-  color: white; /* Warna teks */
-  border: none; /* Tidak ada garis tepi */
-  padding: 10px 25px; /* Ukuran tombol */
-  font-size: 16px; /* Ukuran teks tombol */
-  cursor: pointer; /* Kursor berubah saat diarahkan */
-  border-radius: 4px; /* Sudut membulat */
-}
-
-/* Label untuk bagian fasilitas */
-.facilities-label {
-  margin-top: 20px; /* Jarak dari elemen atasnya */
-  font-weight: bold; /* Huruf tebal */
-  font-size: 28px; /* Tambahkan ini untuk membesarkan teks */
-  text-align: center; /* (opsional) agar teks rata tengah */
-}
-
-/* Container fasilitas */
-.facilities {
-  display: flex; /* Tampilkan item secara horizontal */
-  justify-content: center; /* Pusatkan isi */
-  flex-wrap: wrap; /* Boleh pindah ke baris baru kalau penuh */
-  margin-top: 20px; /* Jarak dari atas */
-  gap: 20px; /* Jarak antar fasilitas */
-}
-
-.facility {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.facility img {
-  width: 160px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-right: 16px;
+.logo {
+  height: 80px;
+  width: auto;
 }
 
-.facility-label {
-  font-size: 20px;
-  font-weight: 600;
+.nav a {
   color: white;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
-  font-family: 'Open Sans', sans-serif;
-  flex: 1;
+  margin-left: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;
 }
 
+.nav a.active,
+.nav a:hover {
+  color: #ffe9a7;
+}
 
-/* Bagian footer */
+/* Hero Section */
+.hero-overlay {
+  padding: 60px 30px 30px;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-overlay p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #f0f0f0;
+}
+
+/* Facility Cards */
+.facilities-section {
+  padding: 40px 20px;
+}
+
+.facilities-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.facility-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.facility-card:hover {
+  transform: translateY(-10px);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.facility-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.facility-info h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #ffe9a7;
+}
+
+.facility-info p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Footer */
 .footer {
   background-color: #12636b;
-  padding: 30px 0;
+  padding: 40px 0;
   color: white;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
-  font-size: 16px;
 }
 
 .footer-content {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
   padding: 0 20px;
 }
 
 .footer h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .footer-columns {
   display: flex;
-  justify-content:center;
   flex-wrap: wrap;
-  text-align: left;
-  /* padding: 0 20px; Dihapus karena footer-content sudah punya padding */
+  justify-content: center;
   gap: 60px;
-  margin-bottom: 30px;
 }
 
 .footer-columns div {
-  margin: 10px; /* Ini akan menambah jarak antar kolom */
-  flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
+  min-width: 200px;
 }
 
 .footer-columns h4 {
@@ -192,51 +162,49 @@ a {
 .footer-columns a {
   display: block;
   margin: 6px 0;
-  font-size: 14px;
   color: #e0f7fa;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .footer-columns a:hover {
   text-decoration: underline;
 }
 
-/* Ini menargetkan .socials secara umum, termasuk yang mungkin ada di header */
 .socials {
   display: flex;
-  gap: 15px;
-  margin-top: 20px; /* Mungkin tidak diinginkan untuk socials di header */
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
 }
 
-/* Pastikan ini spesifik untuk socials di footer jika ada yang di header */
-.footer .socials a { /* Lebih spesifik untuk footer */
+.socials a {
   color: #ffffff;
-  font-size: 24px; /* Ukuran berbeda dari socials di header */
-  text-decoration: none;
+  font-size: 22px;
   transition: color 0.3s ease;
-  margin-left: 0; /* Override margin-left dari .socials a general */
 }
 
-.footer .socials a:hover {
-  color: #007bff;
+.socials a:hover {
+  color: #ffd700;
+}
+
+.footer-separator {
+  margin: 30px 0;
+  border: 0;
+  border-top: 1px solid #ccc;
 }
 
 .legal {
   font-size: 13px;
-  color: #e0f7fa;
-  text-align: left; /* Ini mungkin perlu center jika ingin di tengah footer */
+  text-align: center;
 }
 
 .legal a {
+  margin: 0 10px;
   color: #e0f7fa;
   text-decoration: none;
 }
 
 .legal a:hover {
   text-decoration: underline;
-}
-
-/* Rekomendasi Tambahan */
-* { /* Untuk perhitungan box model yang lebih intuitif */
-  box-sizing: border-box;
 }
