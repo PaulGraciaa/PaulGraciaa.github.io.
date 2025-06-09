@@ -238,3 +238,14 @@ a {
 * { /* Untuk perhitungan box model yang lebih intuitif */
   box-sizing: border-box;
 }
+
+.kotak-putih {
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 20px 30px;
+  display: inline-block;
+  margin-bottom: 10px;
+  opacity: 0.95;
+}
