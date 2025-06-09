@@ -179,21 +179,18 @@ body::before {
   margin: 0 0 30px 0; /* ➕ beri jarak bawah */
 }
 
-
 .footer-columns {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  text-align: left;
-  gap: 30px; /* ➕ Tambahkan jarak antar kolom */
-  padding: 0 40px; /* ➕ Tambahkan padding kiri dan kanan */
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Memusatkan kolom */
+    flex-wrap: wrap; /* Mengizinkan kolom untuk membungkus */
+    text-align: center; /* Memastikan teks di tengah */
+    margin-bottom: 30px;
 }
 
 .footer-columns div {
-  flex: 1 1 220px; /* Minimum 220px supaya tidak terlalu sempit */
-  margin: 10px 20px; /* ➕ Tambahkan jarak antar kolom */
+    margin: 10px; /* Jarak antar kolom */
+    flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
+    text-align: center; /* Memastikan teks di tengah kolom */
 }
 
 .footer-columns h4 {

@@ -230,17 +230,17 @@ body {
 }
 
 .footer-columns {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: left;
-  padding: 0 20px;
-  margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Memusatkan kolom */
+    flex-wrap: wrap; /* Mengizinkan kolom untuk membungkus */
+    text-align: center; /* Memastikan teks di tengah */
+    margin-bottom: 30px;
 }
 
 .footer-columns div {
-  margin: 10px;
-  flex: 1 1 200px;
+    margin: 10px; /* Jarak antar kolom */
+    flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
+    text-align: center; /* Memastikan teks di tengah kolom */
 }
 
 .footer-columns h4 {

@@ -215,20 +215,17 @@ nav ul li:hover {
 
 /* Bagian kolom-kolom footer yang tulisan about, reservasion dan news*/
 .footer-columns {
-  display: flex;
-  justify-content: space-between; /* Biar jaraknya merata kiri-kanan */
-  flex-wrap: wrap;
-  margin-top: 20px;
-  text-align: left;
-  max-width: 1000px; /* Batasi lebar konten footer */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 40px; /* Jarak dari tepi kiri-kanan */
+    display: flex;
+    justify-content: center; /* Memusatkan kolom */
+    flex-wrap: wrap; /* Mengizinkan kolom untuk membungkus */
+    text-align: center; /* Memastikan teks di tengah */
+    margin-bottom: 30px;
 }
 
-/* Setiap kolom di footer */
 .footer-columns div {
-  margin: 10px 10px; /* Jarak antar kolom */
+    margin: 10px; /* Jarak antar kolom */
+    flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
+    text-align: center; /* Memastikan teks di tengah kolom */
 }
 
 /* Judul masing-masing kolom */
