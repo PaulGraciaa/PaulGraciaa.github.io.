@@ -69,67 +69,61 @@
   </form>
 </section>
 
-<!-- KOLOM 2 -->
- <section class="room-card-container">
-  <!-- Header -->
+<!-- KOLOM 1 - Standard Room -->
+<section class="room-card-container">
   <div class="room-card">
     <div class="room-header">
-      <span><strong>Deluxe Room</strong></span>
+      <span><strong>Standard Room</strong></span>
       <span><strong>Advantage</strong></span>
-      <span><strong>Date</strong></span>
+      <span><strong>Capacity</strong></span>
       <span><strong>No. of Room</strong></span>
       <span><strong>Price</strong></span>
     </div>
 
-    <!-- Konten utama (gambar + detail) -->
     <div class="room-content">
-      <!-- Gambar -->
       <div class="room-column image">
-        <img src="../img/deluxe.jpg" alt="room" />
+        <img src="../img/standard.jpg" alt="standard room" />
       </div>
 
-      <!-- Konten detail dan tombol dalam satu container -->
       <div class="room-main-box">
-        <!-- Bagian konten atas -->
         <div class="main-card-content">
-          <!-- Room Detail -->
           <div class="room-detail-box">
             <strong>Room Detail</strong>
             <div><i class="fas fa-wifi"></i> Free wifi</div>
-            <div><i class="fas fa-bed"></i> 2 King Bed</div>
+            <div><i class="fas fa-bed"></i> 1 Queen Bed</div>
+            <div><i class="fas fa-tv"></i> 32" TV</div>
+            <div><i class="fas fa-snowflake"></i> AC</div>
           </div>
 
-          <!-- Tanggal -->
           <div class="room-date">
             <div><i class="fas fa-calendar icon"></i> 00/00/0000</div>
             <div><i class="fas fa-calendar icon"></i> 00/00/0000</div>
           </div>
 
-          <!-- Input jumlah room -->
           <div class="room-number">
-            <input type="text" placeholder="000">
+            <input type="text" value="" readonly>
+            <div class="room-select">
+              <input type="checkbox" id="selectStandard" class="room-checkbox">
+              <label for="selectStandard">Pilih Kamar</label>
+            </div>
           </div>
 
-          <!-- Harga -->
-         <div class="room-price" data-price="1500000">
-           <div class="amount">Rp. 0.000.000</div>
-           <div class="per-night">/room/night</div>
-        </div>
+          <div class="room-price" data-price="800000">
+            <div class="amount">Rp. 0.000.000</div>
+            <div class="per-night">/room/night</div>
+          </div>
         </div>
 
-        <!-- Tombol Book Now (di bawah konten) -->
         <div class="room-book-card">
-         <a href="formpemesanan.html" class="book-btn">Book Now</a>
-        </div>
+          <a href="formpemesanan.html" class="book-btn">Book Now</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- KOLOM 2 -->
- <section class="room-card-container">
-  <!-- Header -->
+<!-- KOLOM 2 - Deluxe Room -->
+<section class="room-card-container">
   <div class="room-card">
     <div class="room-header">
       <span><strong>Deluxe Room</strong></span>
@@ -139,52 +133,74 @@
       <span><strong>Price</strong></span>
     </div>
 
-    <!-- Konten utama (gambar + detail) -->
     <div class="room-content">
-      <!-- Gambar -->
       <div class="room-column image">
-        <img src="../img/deluxe.jpg" alt="room" />
+        <img src="../img/deluxe.jpg" alt="deluxe room" />
       </div>
 
-      <!-- Konten detail dan tombol dalam satu container -->
       <div class="room-main-box">
-        <!-- Bagian konten atas -->
         <div class="main-card-content">
-          <!-- Room Detail -->
           <div class="room-detail-box">
             <strong>Room Detail</strong>
             <div><i class="fas fa-wifi"></i> Free wifi</div>
-            <div><i class="fas fa-bed"></i> 2 King Bed</div>
+            <div><i class="fas fa-bed"></i> 1 King Bed</div>
+            <div><i class="fas fa-tv"></i> 43" Smart TV</div>
+            <div><i class="fas fa-snowflake"></i> AC</div>
+            <div><i class="fas fa-bath"></i> Bathtub</div>
+            <div><i class="fas fa-coffee"></i> Mini Bar</div>
           </div>
 
-          <!-- Tanggal -->
           <div class="room-date">
             <div><i class="fas fa-calendar icon"></i> 00/00/0000</div>
             <div><i class="fas fa-calendar icon"></i> 00/00/0000</div>
           </div>
 
-          <!-- Input jumlah room -->
           <div class="room-number">
-            <input type="text" placeholder="000">
+            <input type="text" value="" readonly>
+            <div class="room-select">
+              <input type="checkbox" id="selectDeluxe" class="room-checkbox">
+              <label for="selectDeluxe">Pilih Kamar</label>
+            </div>
           </div>
 
-          <!-- Harga -->
-         <div class="room-price" data-price="1500000">
-           <div class="amount">Rp. 0.000.000</div>
-           <div class="per-night">/room/night</div>
-        </div>
+          <div class="room-price" data-price="1500000">
+            <div class="amount">Rp. 0.000.000</div>
+            <div class="per-night">/room/night</div>
+          </div>
         </div>
 
-        <!-- Tombol Book Now (di bawah konten) -->
         <div class="room-book-card">
-         <a href="formpemesanan.html" class="book-btn">Book Now</a>
-        </div>
+          <a href="formpemesanan.html" class="book-btn">Book Now</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Tombol Book Selected Rooms -->
+<div class="room-book-card" style="text-align: center; margin: 10px 0;">
+  <a href="#" onclick="bookSelectedRooms(); return false;" class="book-btn">Book Selected Rooms</a>
+</div>
+
+<!-- Modal Popup -->
+<div id="roomModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2>Detail Pemesanan</h2>
+    <div class="modal-details">
+      <div class="selected-rooms"></div>
+      <div class="booking-summary">
+        <h3>Ringkasan Pemesanan</h3>
+        <div class="summary-details"></div>
+        <div class="total-price"></div>
+      </div>
+    </div>
+    <div class="modal-buttons">
+      <button class="cancel-btn" onclick="closeModal()">Batal</button>
+      <a href="#" class="confirm-btn" onclick="proceedToPayment()">Lanjut ke Pembayaran</a>
+    </div>
+  </div>
+</div>
 
  <!-- Footer pada bagian bawah-->
    <footer class="footer">
@@ -229,13 +245,6 @@
         </div>
     </footer>
 
-</body>
-</html>
-
-
-
-</body>
-</html>
 
 
 
@@ -252,7 +261,11 @@
     const checkIn = document.getElementById('checkin').value;
     const checkOut = document.getElementById('checkout').value;
 
-    // Ubah semua card (misalnya ada lebih dari satu)
+    // Reset checkbox
+    document.getElementById('selectStandard').checked = false;
+    document.getElementById('selectDeluxe').checked = false;
+
+    // Ubah semua card
     document.querySelectorAll('.room-card').forEach(function(card) {
       // Room type diubah hanya jika cocok
       if (roomType !== 'All Room Type') {
@@ -263,14 +276,18 @@
       // Check-in dan Check-out
       const dates = card.querySelectorAll('.room-date div');
       if (dates.length >= 2) {
-        dates[0].innerHTML = `<i class="fas fa-user"></i> ${checkIn}`;
-        dates[1].innerHTML = `<i class="fas fa-user"></i> ${checkOut}`;
+        dates[0].innerHTML = `<i class="fas fa-calendar icon"></i> ${checkIn}`;
+        dates[1].innerHTML = `<i class="fas fa-calendar icon"></i> ${checkOut}`;
       }
 
       // Number of rooms
       const roomInput = card.querySelector('.room-number input');
-      if (roomInput) {
+      if (roomInput && roomNumber) {
         roomInput.value = roomNumber;
+        roomInput.removeAttribute('readonly');
+      } else if (roomInput && !roomNumber) {
+        roomInput.value = '';
+        roomInput.setAttribute('readonly', 'readonly');
       }
     });
   });
@@ -311,6 +328,454 @@
   document.getElementById("checkin").addEventListener("change", updatePrices);
   document.getElementById("checkout").addEventListener("change", updatePrices);
 </script>
+
+<script>
+// Fungsi untuk menampilkan notifikasi
+function showNotification(message) {
+  // Buat elemen notifikasi
+  const notification = document.createElement('div');
+  notification.className = 'notification';
+  notification.innerHTML = `
+    <div class="notification-content">
+      <i class="fas fa-info-circle"></i>
+      <span>${message}</span>
+    </div>
+  `;
+  
+  // Tambahkan ke body
+  document.body.appendChild(notification);
+  
+  // Hilangkan notifikasi setelah 5 detik
+  setTimeout(() => {
+    notification.remove();
+  }, 5000);
+}
+
+// Fungsi untuk menampilkan modal
+function showModal(selectedRooms, totalPrice, nights) {
+  const modal = document.getElementById('roomModal');
+  const selectedRoomsDiv = modal.querySelector('.selected-rooms');
+  const summaryDetails = modal.querySelector('.summary-details');
+  const totalPriceDiv = modal.querySelector('.total-price');
+  
+  // Tampilkan kamar yang dipilih
+  selectedRoomsDiv.innerHTML = '<h3>Kamar yang Dipilih:</h3>';
+  for (const [key, room] of Object.entries(selectedRooms)) {
+    selectedRoomsDiv.innerHTML += `
+      <div class="room-item">
+        <div>
+          <strong>${room.type}</strong>
+          <div>Jumlah: ${room.quantity} kamar</div>
+        </div>
+        <div>Rp ${room.price.toLocaleString('id-ID')}</div>
+      </div>
+    `;
+  }
+
+  // Tampilkan ringkasan
+  const checkin = document.getElementById('checkin').value;
+  const checkout = document.getElementById('checkout').value;
+  
+  summaryDetails.innerHTML = `
+    <div class="summary-row">
+      <span>Check-in:</span>
+      <span>${checkin}</span>
+    </div>
+    <div class="summary-row">
+      <span>Check-out:</span>
+      <span>${checkout}</span>
+    </div>
+    <div class="summary-row">
+      <span>Durasi:</span>
+      <span>${nights} malam</span>
+    </div>
+  `;
+
+  totalPriceDiv.innerHTML = `
+    <div class="summary-row">
+      <span>Total Pembayaran:</span>
+      <span>Rp ${totalPrice.toLocaleString('id-ID')}</span>
+    </div>
+  `;
+
+  modal.style.display = 'block';
+  setTimeout(() => modal.classList.add('show'), 10);
+}
+
+// Fungsi untuk menutup modal
+function closeModal() {
+  const modal = document.getElementById('roomModal');
+  modal.classList.remove('show');
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300); // Menunggu animasi selesai
+}
+
+// Fungsi untuk lanjut ke pembayaran
+function proceedToPayment() {
+  const checkin = document.getElementById("checkin").value;
+  const checkout = document.getElementById("checkout").value;
+  const roomNumber = document.getElementById("roomNumber").value;
+  const nights = calculateNights(checkin, checkout);
+  
+  const standardSelected = document.getElementById("selectStandard").checked;
+  const deluxeSelected = document.getElementById("selectDeluxe").checked;
+  
+  let selectedRooms = {};
+  let totalPrice = 0;
+
+  if (standardSelected) {
+    const standardPrice = 800000 * nights * roomNumber;
+    totalPrice += standardPrice;
+    selectedRooms.standard = {
+      type: "Standard Room",
+      quantity: roomNumber,
+      price: standardPrice
+    };
+  }
+
+  if (deluxeSelected) {
+    const deluxePrice = 1500000 * nights * roomNumber;
+    totalPrice += deluxePrice;
+    selectedRooms.deluxe = {
+      type: "Deluxe Room",
+      quantity: roomNumber,
+      price: deluxePrice
+    };
+  }
+
+  const params = new URLSearchParams({
+    checkin: checkin,
+    checkout: checkout,
+    nights: nights,
+    totalPrice: totalPrice,
+    selectedRooms: JSON.stringify(selectedRooms)
+  });
+
+  window.location.href = `formpemesanan.html?${params.toString()}`;
+}
+
+// Update fungsi bookSelectedRooms
+function bookSelectedRooms() {
+  const checkin = document.getElementById("checkin").value;
+  const checkout = document.getElementById("checkout").value;
+  const roomNumber = document.getElementById("roomNumber").value;
+  
+  if (!checkin || !checkout) {
+    alert("Silakan pilih tanggal check-in dan check-out terlebih dahulu!");
+    return;
+  }
+
+  if (!roomNumber) {
+    alert("Silakan masukkan jumlah kamar di form pencarian terlebih dahulu!");
+    return;
+  }
+
+  const standardSelected = document.getElementById("selectStandard").checked;
+  const deluxeSelected = document.getElementById("selectDeluxe").checked;
+
+  if (!standardSelected && !deluxeSelected) {
+    alert("Silakan pilih minimal satu tipe kamar!");
+    return;
+  }
+
+  const nights = calculateNights(checkin, checkout);
+  let totalPrice = 0;
+  let selectedRooms = {};
+
+  if (standardSelected) {
+    const standardPrice = 800000 * nights * roomNumber;
+    totalPrice += standardPrice;
+    selectedRooms.standard = {
+      type: "Standard Room",
+      quantity: roomNumber,
+      price: standardPrice
+    };
+  }
+
+  if (deluxeSelected) {
+    const deluxePrice = 1500000 * nights * roomNumber;
+    totalPrice += deluxePrice;
+    selectedRooms.deluxe = {
+      type: "Deluxe Room",
+      quantity: roomNumber,
+      price: deluxePrice
+    };
+  }
+
+  showModal(selectedRooms, totalPrice, nights);
+}
+
+// Event listener untuk tombol close modal
+document.querySelector('.close-modal').addEventListener('click', closeModal);
+
+// Tutup modal jika klik di luar modal
+window.addEventListener('click', function(event) {
+  const modal = document.getElementById('roomModal');
+  if (event.target == modal) {
+    closeModal();
+  }
+});
+</script>
+
+<style>
+/* Hapus style book-both-container dan book-both-btn yang lama */
+.room-book-card {
+  margin-top: 15px;
+  padding-top: 10px;
+  text-align: right;
+  border-top: 1px solid #999;
+}
+
+.room-book-card:last-of-type {
+  border-top: none;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.book-btn {
+  background-color: gold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+.book-btn:hover {
+  background-color: #e6b800;
+}
+
+/* Styling untuk input readonly */
+.room-number input[readonly] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+  text-align: center;
+}
+
+/* Styling untuk notifikasi */
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #006d77;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification i {
+  font-size: 20px;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.book-both-btn {
+  background-color: gold;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+.book-both-btn:hover:not([disabled]) {
+  background-color: #e6b800;
+}
+
+.book-both-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Styling untuk input room number */
+.room-number input {
+  width: 60px;
+  padding: 6px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  position: relative;
+  left: 27px;
+  text-align: center;
+}
+
+.room-number input[readonly] {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.room-number input:not([readonly]) {
+  background-color: white;
+  cursor: text;
+}
+
+.room-select {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.room-checkbox {
+  margin-right: 5px;
+}
+
+.room-checkbox:checked + label {
+  color: #006d77;
+  font-weight: bold;
+}
+
+.room-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  margin: 0;
+  transform: translateY(0);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-modal {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-details {
+  margin: 20px 0;
+}
+
+.selected-rooms {
+  margin-bottom: 20px;
+}
+
+.room-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.booking-summary {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.summary-details {
+  margin: 10px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.total-price {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 2px solid #ddd;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #006d77;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cancel-btn {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  padding: 8px 16px;
+  background-color: #006d77;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background-color: #005c64;
+}
+</style>
 
 </body>
 </html>
