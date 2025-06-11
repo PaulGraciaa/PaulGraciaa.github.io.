@@ -33,12 +33,27 @@
 
     <div class="payment-row">
       <label>ID Booking</label>
-      <span>123456789012</span>
+      <span id="booking-id">123456789012</span>
+    </div>
+
+    <div class="payment-row">
+      <label>Tanggal Check-in</label>
+      <span id="checkin-date"></span>
+    </div>
+
+    <div class="payment-row">
+      <label>Tanggal Check-out</label>
+      <span id="checkout-date"></span>
+    </div>
+
+    <div class="payment-row">
+      <label>Durasi Menginap</label>
+      <span id="durasi-menginap"></span>
     </div>
 
     <div class="payment-row">
       <label>Total Pembayaran</label>
-      <span>Rp.0.000.000</span>
+      <span id="total-pembayaran"></span>
     </div>
 
     <div class="payment-row">
@@ -46,11 +61,44 @@
       <span class="status-unpaid">Belum dibayar</span>
     </div>
 
+    <script>
+      // Fungsi untuk memformat tanggal
+      function formatTanggal(tanggal) {
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(tanggal).toLocaleDateString('id-ID', options);
+      }
+
+      // Fungsi untuk memformat rupiah
+      function formatRupiah(angka) {
+        return 'Rp. ' + parseInt(angka).toLocaleString('id-ID');
+      }
+
+      // Mengambil data dari localStorage
+      window.onload = function() {
+        const totalBiaya = localStorage.getItem('totalBiaya');
+        const durasi = localStorage.getItem('durasi');
+        const checkin = localStorage.getItem('checkin');
+        const checkout = localStorage.getItem('checkout');
+
+        // Generate ID Booking (timestamp)
+        const bookingId = Date.now().toString().slice(-12);
+        document.getElementById('booking-id').textContent = bookingId;
+
+        // Tampilkan data
+        if (checkin) document.getElementById('checkin-date').textContent = formatTanggal(checkin);
+        if (checkout) document.getElementById('checkout-date').textContent = formatTanggal(checkout);
+        if (durasi) document.getElementById('durasi-menginap').textContent = durasi + ' malam';
+        if (totalBiaya) document.getElementById('total-pembayaran').textContent = formatRupiah(totalBiaya);
+
+        // Simpan ID Booking ke localStorage
+        localStorage.setItem('bookingId', bookingId);
+      }
+    </script>
 
     <div class="payment-method">
       <label>Pilih Metode Pembayaran :</label>
       <div class="method-option">
-        <input type="radio" id="va" name="metode" value="va">
+        <input type="radio" id="va" name="metode" value="va" onchange="handleVAPayment()">
         <label for="va">VA (Virtual Account)<br><small>89278272992929</small></label>
       </div>
       <div class="method-option">
@@ -59,9 +107,149 @@
       </div>
     </div>
 
+    <!-- Popup Pembayaran Berhasil -->
+    <div id="paymentPopup" class="payment-popup">
+      <div class="popup-content">
+        <i class="fas fa-check-circle"></i>
+        <h3>Pembayaran Berhasil!</h3>
+        <p>Terima kasih telah melakukan pembayaran.</p>
+        <p>ID Booking: <span id="popup-booking-id"></span></p>
+        <button class="close-popup-btn" onclick="closePaymentPopup()">Tutup</button>
+      </div>
+    </div>
+
+    <style>
+      .payment-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        animation: popupSlideIn 0.3s ease-out;
+        min-width: 300px;
+      }
+
+      .popup-content i {
+        color: #4CAF50;
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      .popup-content h3 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .popup-content p {
+        color: #666;
+        margin: 5px 0;
+      }
+
+      .close-popup-btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+      }
+
+      .close-popup-btn:hover {
+        background-color: #45a049;
+      }
+
+      @keyframes popupSlideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes popupSlideOut {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+      }
+    </style>
+
+    <script>
+      // Fungsi untuk menutup popup
+      function closePaymentPopup() {
+        const popup = document.getElementById('paymentPopup');
+        popup.style.animation = 'popupSlideOut 0.3s ease-out';
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 300);
+      }
+
+      // Fungsi untuk menangani pembayaran VA
+      function handleVAPayment() {
+        // Tunggu 3 detik sebelum menampilkan popup
+        setTimeout(() => {
+          const popup = document.getElementById('paymentPopup');
+          const popupBookingId = document.getElementById('popup-booking-id');
+          const bookingId = document.getElementById('booking-id').textContent;
+          
+          // Tampilkan popup
+          popup.style.display = 'flex';
+          popupBookingId.textContent = bookingId;
+          
+          // Update status pembayaran
+          document.querySelector('.status-unpaid').textContent = 'Lunas';
+          document.querySelector('.status-unpaid').className = 'status-paid';
+          
+          // Nonaktifkan radio button VA
+          document.getElementById('va').disabled = true;
+          document.getElementById('resepsionis').disabled = true;
+        }, 3000);
+      }
+
+      // Tambahkan style untuk status pembayaran
+      const style = document.createElement('style');
+      style.textContent = `
+        .status-paid {
+          color: #4CAF50;
+          font-weight: bold;
+        }
+        .status-unpaid {
+          color: #f44336;
+          font-weight: bold;
+        }
+        input[type="radio"]:disabled + label {
+          opacity: 0.6;
+          cursor: not-allowed;
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+
     <div class="payment-instruction">
       <strong>Instruksi</strong><br>
-      Jika memilih <em>“Bayar di Resepsionis”</em>, silahkan tunjukkan ID Booking ini saat Check-in untuk menyelesaikan pembayaran.
+      Jika memilih <em>"Bayar di Resepsionis"</em>, silahkan tunjukkan ID Booking ini saat Check-in untuk menyelesaikan pembayaran.
     </div>
   </div>
 

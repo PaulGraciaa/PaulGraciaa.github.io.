@@ -36,97 +36,97 @@
         <label>Nama Pemesan :</label>
         <input type="text" placeholder="Masukkan nama" />
 
-      <label>Email :</label>
-      <div class="email-input-container">
-        <input
-          type="email"
-          id="email"
-          placeholder="username@gmail.com / username@yahoo.com"
-          required
-          pattern="[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$"
-          title="Hanya alamat Gmail atau Yahoo yang diperbolehkan"
-        />
-        <span id="email-error" class="error-message"></span>
-      </div>
+        <label>Email :</label>
+        <div class="email-input-container">
+          <input
+            type="email"
+            id="email"
+            placeholder="username@gmail.com / username@yahoo.com"
+            required
+            pattern="[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$"
+            title="Hanya alamat Gmail atau Yahoo yang diperbolehkan"
+          />
+          <span id="email-error" class="error-message"></span>
+        </div>
 
-      <style>
-        .email-input-container {
-          position: relative;
-          width: 100%;
-          margin-bottom: 15px;
-        }
-        .email-input-container input {
-          width: 100%;
-          padding: 10px;
-          font-size: 14px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          box-sizing: border-box;
-          height: 40px;
-        }
-        .error-message {
-          color: #ff0000;
-          font-size: 12px;
-          display: none;
-          margin-top: 5px;
-          padding: 5px;
-          background-color: #fff5f5;
-          border-radius: 4px;
-          border: 1px solid #ffcccc;
-        }
-        input:invalid {
-          border-color: #ff0000;
-          background-color: #fff5f5;
-        }
-        input:valid {
-          border-color: #00ff00;
-          background-color: #f5fff5;
-        }
-        input:focus {
-          outline: none;
-          box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        }
-        @media screen and (max-width: 768px) {
+        <style>
+          .email-input-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+          }
           .email-input-container input {
-            font-size: 16px; /* Mencegah zoom otomatis di mobile */
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            height: 40px;
           }
-        }
-      </style>
-
-      <script>
-        const emailInput = document.getElementById('email');
-        const emailError = document.getElementById('email-error');
-
-        emailInput.addEventListener('input', function(e) {
-          const email = this.value.trim().toLowerCase();
-          const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
-          
-          if (email && !validPattern.test(email)) {
-            emailError.textContent = 'Hanya alamat Gmail atau Yahoo yang diperbolehkan';
-            emailError.style.display = 'block';
-            this.setCustomValidity('Hanya alamat Gmail atau Yahoo yang diperbolehkan');
-          } else {
-            emailError.style.display = 'none';
-            this.setCustomValidity('');
+          .error-message {
+            color: #ff0000;
+            font-size: 12px;
+            display: none;
+            margin-top: 5px;
+            padding: 5px;
+            background-color: #fff5f5;
+            border-radius: 4px;
+            border: 1px solid #ffcccc;
           }
-        });
-
-        document.querySelector('form').addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          const email = emailInput.value.trim().toLowerCase();
-          const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
-
-          if (!validPattern.test(email)) {
-            emailError.textContent = 'Hanya alamat Gmail atau Yahoo yang diperbolehkan';
-            emailError.style.display = 'block';
-            emailInput.focus();
-            return false;
+          input:invalid {
+            border-color: #ff0000;
+            background-color: #fff5f5;
           }
+          input:valid {
+            border-color: #00ff00;
+            background-color: #f5fff5;
+          }
+          input:focus {
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+          }
+          @media screen and (max-width: 768px) {
+            .email-input-container input {
+              font-size: 16px; /* Mencegah zoom otomatis di mobile */
+            }
+          }
+        </style>
 
-          this.submit();
-        });
-      </script>
+        <script>
+          const emailInput = document.getElementById('email');
+          const emailError = document.getElementById('email-error');
+
+          emailInput.addEventListener('input', function(e) {
+            const email = this.value.trim().toLowerCase();
+            const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+            
+            if (email && !validPattern.test(email)) {
+              emailError.textContent = 'Hanya alamat Gmail atau Yahoo yang diperbolehkan';
+              emailError.style.display = 'block';
+              this.setCustomValidity('Hanya alamat Gmail atau Yahoo yang diperbolehkan');
+            } else {
+              emailError.style.display = 'none';
+              this.setCustomValidity('');
+            }
+          });
+
+          document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = emailInput.value.trim().toLowerCase();
+            const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+
+            if (!validPattern.test(email)) {
+              emailError.textContent = 'Hanya alamat Gmail atau Yahoo yang diperbolehkan';
+              emailError.style.display = 'block';
+              emailInput.focus();
+              return false;
+            }
+
+            this.submit();
+          });
+        </script>
 
         <label>Jenis Kelamin :</label>
         <div class="gender-options">
@@ -136,18 +136,9 @@
 
         <label>Nomor Identitas (NIK) :</label>
         <input type="text" placeholder="Masukkan nomor NIK" />
-
-        <label>Tipe Kamar :</label>
-        <select>
-          <option selected disabled>Pilih tipe kamar</option>
-          <option>Standard</option>
-          <option>Deluxe</option>
-          <option>Superior</option>
-        </select>
       </div>
 
       <div class="form-right">
-
         <label>No Handphone :</label>
         <input 
           type="text" 
@@ -164,22 +155,41 @@
           });
         </script>
 
-
-        <label>Harga :</label>
-        <input type="text" id="harga-per-malam" value="Rp. 0,000,000" disabled />
-
         <label>Tanggal Pesan :</label>
-        <input type="date" />
+        <input type="date" id="checkin-date" required />
 
-        <label>Durasi Menginap (Malam) :</label>
-        <select name="durasi">
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
+        <label>Tanggal Checkout :</label>
+        <input type="date" id="checkout-date" required />
+
+        <script>
+          // Fungsi untuk menghitung durasi menginap
+          function hitungDurasi() {
+            const checkin = new Date(document.getElementById('checkin-date').value);
+            const checkout = new Date(document.getElementById('checkout-date').value);
+            
+            if (checkin && checkout && checkout > checkin) {
+              const diffTime = Math.abs(checkout - checkin);
+              const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+              return diffDays;
+            }
+            return 0;
+          }
+
+          // Validasi tanggal checkout harus setelah checkin
+          document.getElementById('checkout-date').addEventListener('change', function() {
+            const checkin = new Date(document.getElementById('checkin-date').value);
+            const checkout = new Date(this.value);
+            
+            if (checkout <= checkin) {
+              alert('Tanggal checkout harus setelah tanggal checkin');
+              this.value = '';
+            }
+          });
+
+          // Set tanggal minimal checkin ke hari ini
+          const today = new Date().toISOString().split('T')[0];
+          document.getElementById('checkin-date').min = today;
+        </script>
 
         <label><input type="checkbox" id="breakfast" checked /> Termasuk Breakfast</label>
 
@@ -189,7 +199,7 @@
 
       <div class="form-buttons">
         <button type="button" class="btn hitung">Hitung Total Bayaran</button>
-        <button type="button" class="btn booking" onclick="window.location.href='pembayaran.html'">Booking</button>
+        <button type="button" class="btn booking" onclick="prosesBooking()">Booking</button>
         <button type="reset" class="btn cancel">Cancel</button>
       </div>
     </form>
@@ -238,13 +248,55 @@
         </div>
     </footer>
 
-</body>
-</html>
-
-
-
   <!-- Script JavaScript -->
   <script>
+    // Fungsi untuk mengambil parameter dari URL
+    function getUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        checkin: params.get('checkin'),
+        checkout: params.get('checkout'),
+        nights: params.get('nights'),
+        totalPrice: params.get('totalPrice'),
+        selectedRooms: JSON.parse(params.get('selectedRooms') || '{}')
+      };
+    }
+
+    // Fungsi untuk mengisi form dengan data dari URL
+    function fillFormData() {
+      const params = getUrlParams();
+      
+      // Isi tanggal checkin dan checkout
+      if (params.checkin) {
+        document.getElementById('checkin-date').value = params.checkin;
+      }
+      if (params.checkout) {
+        document.getElementById('checkout-date').value = params.checkout;
+      }
+
+      // Isi total biaya
+      if (params.totalPrice) {
+        const totalPrice = parseInt(params.totalPrice);
+        document.getElementById('total-biaya').value = formatRupiah(totalPrice);
+        
+        // Simpan data ke localStorage
+        localStorage.setItem('totalBiaya', totalPrice);
+        localStorage.setItem('durasi', params.nights);
+        localStorage.setItem('checkin', params.checkin);
+        localStorage.setItem('checkout', params.checkout);
+        
+        // Simpan detail kamar yang dipilih
+        if (params.selectedRooms) {
+          localStorage.setItem('selectedRooms', JSON.stringify(params.selectedRooms));
+        }
+      }
+    }
+
+    // Panggil fungsi saat halaman dimuat
+    window.onload = function() {
+      fillFormData();
+    };
+
     document.querySelector('.hitung').addEventListener('click', function () {
       // Validasi email terlebih dahulu
       const emailInput = document.getElementById('email');
@@ -259,26 +311,39 @@
         return false;
       }
 
-      // Jika email valid, lanjutkan perhitungan
-      const hargaPerMalam = 3000000;
-      const durasi = parseInt(document.querySelector('select[name="durasi"]').value);
-      const breakfastChecked = document.getElementById('breakfast').checked;
-
-      let totalHarga = hargaPerMalam * durasi;
-
-      if (breakfastChecked) {
-        totalHarga += 100000 * durasi; // Tambah biaya breakfast per malam
+      // Validasi tanggal
+      const checkin = document.getElementById('checkin-date').value;
+      const checkout = document.getElementById('checkout-date').value;
+      
+      if (!checkin || !checkout) {
+        alert('Mohon isi tanggal checkin dan checkout');
+        return false;
       }
 
-      document.getElementById('harga-per-malam').value = formatRupiah(hargaPerMalam);
-      document.getElementById('total-biaya').value = formatRupiah(totalHarga);
-      
-      // Sembunyikan pesan error jika ada
-      emailError.style.display = 'none';
+      // Ambil data dari localStorage jika ada
+      const totalBiaya = localStorage.getItem('totalBiaya');
+      if (totalBiaya) {
+        document.getElementById('total-biaya').value = formatRupiah(totalBiaya);
+        emailError.style.display = 'none';
+        return;
+      }
+
+      // Jika tidak ada data di localStorage, tampilkan pesan
+      alert('Silahkan pilih kamar terlebih dahulu di halaman booking');
+      window.location.href = 'booking.html';
     });
 
     function formatRupiah(angka) {
-      return 'Rp. ' + angka.toLocaleString('id-ID');
+      return 'Rp. ' + parseInt(angka).toLocaleString('id-ID');
+    }
+
+    function prosesBooking() {
+      const totalBiaya = localStorage.getItem('totalBiaya');
+      if (!totalBiaya || totalBiaya === '0') {
+        alert('Silahkan hitung total bayaran terlebih dahulu');
+        return;
+      }
+      window.location.href = 'pembayaran.html';
     }
   </script>
 
