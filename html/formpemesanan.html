@@ -36,6 +36,33 @@
         <label>Nama Pemesan :</label>
         <input type="text" placeholder="Masukkan nama" />
 
+      <label>Email :</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="username@gmail.com / username@yahoo.com"
+        required
+        title="Masukkan alamat Gmail atau Yahoo"
+      />
+
+      <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+          const email = document.getElementById('email').value.trim().toLowerCase();
+          
+          // Pola hanya untuk Gmail dan Yahoo
+          const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+
+          if (!validPattern.test(email)) {
+            e.preventDefault(); // Blokir pengiriman form
+            alert('Hanya alamat Gmail atau Yahoo yang diperbolehkan (contoh: user@gmail.com atau user@yahoo.com).');
+            document.getElementById('email').focus();
+            
+            // Jika ada fungsi perhitungan biaya, pastikan itu juga tidak dijalankan
+            return false;
+          }
+        });
+      </script>
+
         <label>Jenis Kelamin :</label>
         <div class="gender-options">
           <label><input type="radio" name="gender" /> Laki - Laki</label>
@@ -55,6 +82,24 @@
       </div>
 
       <div class="form-right">
+
+        <label>No Handphone :</label>
+        <input 
+          type="text" 
+          id="nohp" 
+          placeholder="Masukkan No Handphone" 
+          maxlength="11" 
+          required 
+        />
+
+        <script>
+          document.getElementById('nohp').addEventListener('input', function(e) {
+            // Hanya simpan digit angka, maksimal 11 digit
+            this.value = this.value.replace(/\D/g, '').slice(0, 11);
+          });
+        </script>
+
+
         <label>Harga :</label>
         <input type="text" id="harga-per-malam" value="Rp. 0,000,000" disabled />
 
