@@ -37,29 +37,94 @@
         <input type="text" placeholder="Masukkan nama" />
 
       <label>Email :</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="username@gmail.com / username@yahoo.com"
-        required
-        title="Masukkan alamat Gmail atau Yahoo"
-      />
+      <div class="email-input-container">
+        <input
+          type="email"
+          id="email"
+          placeholder="username@gmail.com / username@yahoo.com"
+          required
+          pattern="[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$"
+          title="Hanya alamat Gmail atau Yahoo yang diperbolehkan"
+        />
+        <span id="email-error" class="error-message"></span>
+      </div>
+
+      <style>
+        .email-input-container {
+          position: relative;
+          width: 100%;
+          margin-bottom: 15px;
+        }
+        .email-input-container input {
+          width: 100%;
+          padding: 10px;
+          font-size: 14px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          height: 40px;
+        }
+        .error-message {
+          color: #ff0000;
+          font-size: 12px;
+          display: none;
+          margin-top: 5px;
+          padding: 5px;
+          background-color: #fff5f5;
+          border-radius: 4px;
+          border: 1px solid #ffcccc;
+        }
+        input:invalid {
+          border-color: #ff0000;
+          background-color: #fff5f5;
+        }
+        input:valid {
+          border-color: #00ff00;
+          background-color: #f5fff5;
+        }
+        input:focus {
+          outline: none;
+          box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        @media screen and (max-width: 768px) {
+          .email-input-container input {
+            font-size: 16px; /* Mencegah zoom otomatis di mobile */
+          }
+        }
+      </style>
 
       <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-          const email = document.getElementById('email').value.trim().toLowerCase();
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+
+        emailInput.addEventListener('input', function(e) {
+          const email = this.value.trim().toLowerCase();
+          const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
           
-          // Pola hanya untuk Gmail dan Yahoo
+          if (email && !validPattern.test(email)) {
+            emailError.textContent = 'Hanya alamat Gmail atau Yahoo yang diperbolehkan';
+            emailError.style.display = 'block';
+            this.setCustomValidity('Hanya alamat Gmail atau Yahoo yang diperbolehkan');
+          } else {
+            emailError.style.display = 'none';
+            this.setCustomValidity('');
+          }
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const email = emailInput.value.trim().toLowerCase();
           const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
 
           if (!validPattern.test(email)) {
-            e.preventDefault(); // Blokir pengiriman form
-            alert('Hanya alamat Gmail atau Yahoo yang diperbolehkan (contoh: user@gmail.com atau user@yahoo.com).');
-            document.getElementById('email').focus();
-            
-            // Jika ada fungsi perhitungan biaya, pastikan itu juga tidak dijalankan
+            emailError.textContent = 'Hanya alamat Gmail atau Yahoo yang diperbolehkan';
+            emailError.style.display = 'block';
+            emailInput.focus();
             return false;
           }
+
+          this.submit();
         });
       </script>
 
@@ -181,6 +246,20 @@
   <!-- Script JavaScript -->
   <script>
     document.querySelector('.hitung').addEventListener('click', function () {
+      // Validasi email terlebih dahulu
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value.trim().toLowerCase();
+      const validPattern = /^[a-z0-9._%+-]+@(gmail\.com|yahoo\.com)$/;
+      const emailError = document.getElementById('email-error');
+
+      if (!email || !validPattern.test(email)) {
+        emailError.textContent = 'Wajib menggunakan email @gmail.com atau @yahoo.com untuk menghitung pembayaran';
+        emailError.style.display = 'block';
+        emailInput.focus();
+        return false;
+      }
+
+      // Jika email valid, lanjutkan perhitungan
       const hargaPerMalam = 3000000;
       const durasi = parseInt(document.querySelector('select[name="durasi"]').value);
       const breakfastChecked = document.getElementById('breakfast').checked;
@@ -193,6 +272,9 @@
 
       document.getElementById('harga-per-malam').value = formatRupiah(hargaPerMalam);
       document.getElementById('total-biaya').value = formatRupiah(totalHarga);
+      
+      // Sembunyikan pesan error jika ada
+      emailError.style.display = 'none';
     });
 
     function formatRupiah(angka) {
