@@ -245,3 +245,15 @@ body {
 .legal a:hover {
   text-decoration: underline;
 }
+
+
+/* untuk halaman register gak scroll */
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sembunyikan footer kalau di halaman register */
+body.register-page .footer {
+  display: block !important;
+}

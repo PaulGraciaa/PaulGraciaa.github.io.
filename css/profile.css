@@ -220,3 +220,14 @@ form button:hover {
 * { /* Untuk perhitungan box model yang lebih intuitif */
   box-sizing: border-box;
 }
+
+/* untuk halaman register gak scroll */
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sembunyikan footer kalau di halaman register */
+body.register-page .footer {
+  display: block !important;
+}
