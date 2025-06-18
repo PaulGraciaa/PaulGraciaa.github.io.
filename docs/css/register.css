@@ -1,0 +1,248 @@
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+}
+
+/* Header Baru */
+.header {
+  background-color: #006d77;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 80px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  height: 240px;
+  width: auto;
+  margin-left: 20px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+/* header nontifikasi dan profile */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #006d77;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .socials a,
+  .user-icons a {
+    color: #333;
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .socials a:hover,
+  .user-icons a:hover {
+    color: #007bff;
+  }
+
+  .user-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .register-section {
+  background: url('../img/login.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.register-box {
+  background: rgba(157.56, 198.42, 209.63, 0.89);
+  border-radius: 10px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 420px;
+  margin-top: -200px;
+  text-align: center;
+  color: #333;
+  
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 999px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  gap: 12px;
+}
+
+.input-group i {
+  font-size: 18px;
+  color: #333;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 15px;
+  background: transparent;
+  color: #333;
+}
+
+.register-box button {
+  width: 100%;
+  
+  padding: 12px;
+  border: none;
+  border-radius: 999px;
+  background-color: #0075f6;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.register-box button:hover {
+  background-color: #0061d1;
+  transform: scale(1.02);
+  
+}
+
+
+
+/* Footer */
+.footer {
+  background-color: #12636b;
+  padding: 30px 0;
+  color: white;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: center; /* Memusatkan kolom */
+    flex-wrap: wrap; /* Mengizinkan kolom untuk membungkus */
+    text-align: center; /* Memastikan teks di tengah */
+    margin-bottom: 30px;
+}
+
+.footer-columns div {
+    margin: 10px; /* Jarak antar kolom */
+    flex: 1 1 200px; /* Setiap kolom minimal 200px, bisa membesar */
+    text-align: center; /* Memastikan teks di tengah kolom */
+}
+
+.footer-columns h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-columns a {
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  color: #e0f7fa;
+  text-decoration: none;
+}
+
+.footer-columns a:hover {
+  text-decoration: underline;
+}
+
+/* posisi sosial media  */
+  .socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .socials a {
+    color: #ffffff;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .socials a:hover {
+    color: #007bff;
+  }
+
+
+/* Legal Links */
+.legal {
+  font-size: 13px;
+  color: #e0f7fa;
+  text-align: left;
+}
+
+.legal a {
+  color: #e0f7fa;
+  text-decoration: none;
+}
+
+.legal a:hover {
+  text-decoration: underline;
+}
+
+/* untuk halaman register gak scroll */
+html, body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sembunyikan footer kalau di halaman register */
+body.register-page .footer {
+  display: block;
+}
